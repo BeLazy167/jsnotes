@@ -105,7 +105,7 @@ toString() Converts an array to a string
 unShift() Returns a new array with a new length by the addition of
 one or more elements 
 
-PS unshift() and shift() work in exactly the same way as push() and pop(), respectively, except that they work on the beginning of the array, not the end.
+PS: unshift() and shift() work in exactly the same way as push() and pop(), respectively, except that they work on the beginning of the array, not the end.
 
 */
 
@@ -138,3 +138,40 @@ console.log(result)
 // (e)=>(e%2===0) is a callback function if we dont use {} in a function we dont need to return anything
 var r = [2,4,6].every((e)=>(e%2===0))
 console.log(r)
+
+//  Filter and Fill
+
+
+//FILL: fill(value, start, end)
+const array1 = [1, 2, 3, 4];
+// fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// expected output: [1, 2, 0, 0]
+
+
+//FILTER 
+//The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result2 = words.filter(word => (word.length % 5===0) );
+console.log(result2);
+// expected output: Array ["exuberant", "destruction", "present"]
+
+
+//OBJECTS
+var user = {
+    firstName:"Dhruv",
+    lastName:"Khara",
+    role:"Admin",
+    loginCount:32,
+    faceBookSignedIn: true
+};
+console.log(user.firstName); //way 1
+console.log(user["lastName"]); // way 2
+
+console.log(user.loginCount)
+user.loginCount = 44 //update the data
+console.log(user.loginCount)
+
+console.table(user)
+//better way to 
