@@ -114,10 +114,27 @@ PS unshift() and shift() work in exactly the same way as push() and pop(), respe
 
 //Call back and arrow in array
 
+/* 
+Passing functions as arguments
+A callback function is a function that is passed as an argument to another
+function. Callback functions are a technique that’s possible in JavaScript
+because of the fact that functions are objects
+*/
 
-
- var isEven = (num) =>{
+var isEven = (num) =>{
     return num%2===0;
  }
- 
-console.log(isEven(9))
+/*USING EVERY
+The every() method tests whether all elements in the array pass the test implemented by the provided function. 
+It returns a Boolean value.
+true if the callback function returns a truthy value for every array element. Otherwise, false.
+*/
+var result = [2,4,6,9].every(isEven); 
+// we are passing isEven and not isEven() as we are reffering the funcion of isEven to every 
+console.log(result)
+
+
+//short code of above
+// (e)=>(e%2===0) is a callback function if we dont use {} in a function we dont need to return anything
+var r = [2,4,6].every((e)=>(e%2===0))
+console.log(r)
