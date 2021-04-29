@@ -164,14 +164,67 @@ var user = {
     lastName:"Khara",
     role:"Admin",
     loginCount:32,
-    faceBookSignedIn: true
+    faceBookSignedIn: true,
+    courseList :[],
+    buyCousrse: function (cname){
+        this.courseList.push(cname);
+    },
+    getCcount: function (){
+        return `${this.firstName} has enrolled in ${this.courseList.length} courses`
+    },
 };
+
 console.log(user.firstName); //way 1
 console.log(user["lastName"]); // way 2
 
-console.log(user.loginCount)
-user.loginCount = 44 //update the data
-console.log(user.loginCount)
+console.log(user.loginCount);
+user.loginCount = 44; //update the data
+console.log(user.loginCount);
 
+console.table(user);
+//better way to look an object
+
+
+
+// ['React','Js','Python'].every(user.buyCousrse);
+user.buyCousrse('React')
+console.log(user.getCcount());
 console.table(user)
-//better way to 
+
+
+//For loop basics
+
+const names2 = ['Dhruv','Jimit',"Jay","Raj","Ikjyot"];
+// for (let index = 0; index < names2.length; index++) {
+//     console.log(names2[index]);
+// }
+
+//while do while
+// let i = names2.length;
+// while (i>=0) {
+//     console.log(names2[i]);
+//     i--;
+// }
+
+//For each
+//The forEach() method executes a provided function once for each array element.
+
+// names2.forEach((s)=>(console.log(s)));
+
+//for of and for in
+
+for(const n of names2){
+    console.log(n);
+}
+
+const symbol = {
+    in : "inr",
+    us : "usd",
+    au : "ausd",
+};
+
+for(const m in symbol){
+    console.log(symbol[m]);
+}
+
+//confusing part of this
