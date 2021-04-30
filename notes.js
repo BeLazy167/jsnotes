@@ -227,10 +227,69 @@ for(const m in symbol){
     console.log(symbol[m]);
 }
 
-//confusing part of this
 
 
 
 
 
-//How to grab web elements in javascript
+
+
+
+/*
+OBJECT:
+Constructing Objects with constructor functionsTo create a new type of object,
+you define a new constructor function.
+Constructor functions are formed just like any function in JavaScript, 
+but they use the this keyword to assign properties to a new object. 
+
+The new object then inherits the properties of the object type
+ 
+*/
+
+/*
+PROTOTYPE:
+Modifying an object typeSuppose that you have your Person object type,
+which serves as the proto-type for several objects. 
+At some point you realize that the person,
+as well as all the objects that inherit from it,
+ought to have a few more properties
+*/
+
+
+
+
+//code:
+var User = function(firstName, courseCount) {
+    this.firstName = firstName;
+    this.courseCount = courseCount;
+    this.getCourseCount = function() {
+        console.log(`Course count is: ${this.courseCount}`)
+    };
+};
+// above code is another way of defining object
+
+User.prototype.getFirstname = function() {
+    console.log(`Your firstname is : ${this.firstName}`);
+};
+// using prototype you can access or give them more properties or more functions,getters ,setters etc.
+
+var jay = new User("jay", 2); 
+// new keyword create new Instances of User
+jay.getCourseCount();
+jay.getFirstname();
+
+var dhruv = new User("dhruv", 1);
+dhruv.getCourseCount();
+dhruv.getFirstname();
+/*
+1)above code will create 2 instances of User.
+2)new keyoword is responsible for invoking the custom constructor and creating a unique instances.
+3)new keyword is also find all the prototype which are defined and inject that further in user object.
+*/
+
+// how to check is property exists or not?
+if (jay.hasOwnProperty("firstName")) {
+    jay.getFirstname();
+};
+
+// above code check if property firstname is present or exists inside a object or not
