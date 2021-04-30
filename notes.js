@@ -228,3 +228,9 @@ for(const m in symbol){
 }
 
 //confusing part of this
+
+
+
+
+
+//How to grab web elements in javascript
