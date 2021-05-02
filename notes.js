@@ -1,22 +1,21 @@
-function Hello(){
-    console.log("HEllo");
+function Hello() {
+  console.log("HEllo");
 }
-Hello();//call function
+Hello(); //call function
 Hello; //refrence to function
 
-
-function Hellotwo(name){
-    console.log(name);
+function Hellotwo(name) {
+  console.log(name);
 } //if we call this fucntion and dont pass the given parameters the output will be undefined i.e name = undefined
 
 // two ways to write a function
-var lname = function(y){
-    return y;
-}
+var lname = function (y) {
+  return y;
+};
 
 var fname = (x) => {
-    return x;
-}
+  return x;
+};
 console.log(fname(10));
 // __________________________________________________________________________
 //CODE hoisting
@@ -33,42 +32,41 @@ VARIABLE DECLARATION ARE SCANNED AND MADE UNDEFIND
  */
 
 tipper(20);
-function tipper(x){
-    var bill = parseInt(x);
-    console.log(bill+(bill/10)*2)
-}//this fuction works and gives output
+function tipper(x) {
+  var bill = parseInt(x);
+  console.log(bill + (bill / 10) * 2);
+} //this fuction works and gives output
 
 //both function do the same thing
 
 // xtipper(20)
-var xtipper = function (x){
-    var bill = parseInt(x);
-    console.log(bill+(bill/10)*2)
-}//but this function does not work as the execution context makes variable undefinded
+var xtipper = function (x) {
+  var bill = parseInt(x);
+  console.log(bill + (bill / 10) * 2);
+}; //but this function does not work as the execution context makes variable undefinded
 //ERROR : TypeError: xtipper is not a function
 // if we call xtipper after the function declaration it will work
-
 
 //SCOPE CHAINING
 
 var name = "Dhruv";
-console.log("line 56",name);
- function sayName(){
-     console.log("line number 58" ,name);
- }
- sayName(); // as we have not passed name we will get the name from above declartion of name
+console.log("line 56", name);
+function sayName() {
+  console.log("line number 58", name);
+}
+sayName(); // as we have not passed name we will get the name from above declartion of name
 
- //ARRAY
+//ARRAY
 
-var names = ['Dhruv','Jimit',"Jay"];
-var sname = new Array("Khara","Mehta","Panchal");
+var names = ["Dhruv", "Jimit", "Jay"];
+var sname = new Array("Khara", "Mehta", "Panchal");
 console.log(sname);
-console.log("My name is ",names[0],sname[0]);
+console.log("My name is ", names[0], sname[0]);
 names.pop(); // remove from end so it will remove jay like a stack
 console.log(names);
-names.unshift("Jay");//adds jay in start of names array
+names.unshift("Jay"); //adds jay in start of names array
 console.log(names);
-names.shift();// removes from the start like queue
+names.shift(); // removes from the start like queue
 console.log(names);
 
 /*
@@ -109,9 +107,6 @@ PS: unshift() and shift() work in exactly the same way as push() and pop(), resp
 
 */
 
-
-
-
 //Call back and arrow in array
 
 /* 
@@ -121,26 +116,24 @@ function. Callback functions are a technique that’s possible in JavaScript
 because of the fact that functions are objects
 */
 
-var isEven = (num) =>{
-    return num%2===0;
- }
+var isEven = (num) => {
+  return num % 2 === 0;
+};
 /*USING EVERY
 The every() method tests whether all elements in the array pass the test implemented by the provided function. 
 It returns a Boolean value.
 true if the callback function returns a truthy value for every array element. Otherwise, false.
 */
-var result = [2,4,6,9].every(isEven); 
-// we are passing isEven and not isEven() as we are reffering the funcion of isEven to every 
-console.log(result)
-
+var result = [2, 4, 6, 9].every(isEven);
+// we are passing isEven and not isEven() as we are reffering the funcion of isEven to every
+console.log(result);
 
 //short code of above
 // (e)=>(e%2===0) is a callback function if we dont use {} in a function we dont need to return anything
-var r = [2,4,6].every((e)=>(e%2===0))
-console.log(r)
+var r = [2, 4, 6].every((e) => e % 2 === 0);
+console.log(r);
 
 //  Filter and Fill
-
 
 //FILL: fill(value, start, end)
 const array1 = [1, 2, 3, 4];
@@ -148,30 +141,35 @@ const array1 = [1, 2, 3, 4];
 console.log(array1.fill(0, 2, 4));
 // expected output: [1, 2, 0, 0]
 
-
-//FILTER 
+//FILTER
 //The filter() method creates a new array with all elements that pass the test implemented by the provided function.
 
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-const result2 = words.filter(word => (word.length % 5===0) );
+const words = [
+  "spray",
+  "limit",
+  "elite",
+  "exuberant",
+  "destruction",
+  "present",
+];
+const result2 = words.filter((word) => word.length % 5 === 0);
 console.log(result2);
 // expected output: Array ["exuberant", "destruction", "present"]
 
-
 //OBJECTS
 var user = {
-    firstName:"Dhruv",
-    lastName:"Khara",
-    role:"Admin",
-    loginCount:32,
-    faceBookSignedIn: true,
-    courseList :[],
-    buyCousrse: function (cname){
-        this.courseList.push(cname);
-    },
-    getCcount: function (){
-        return `${this.firstName} has enrolled in ${this.courseList.length} courses`
-    },
+  firstName: "Dhruv",
+  lastName: "Khara",
+  role: "Admin",
+  loginCount: 32,
+  faceBookSignedIn: true,
+  courseList: [],
+  buyCousrse: function (cname) {
+    this.courseList.push(cname);
+  },
+  getCcount: function () {
+    return `${this.firstName} has enrolled in ${this.courseList.length} courses`;
+  },
 };
 
 console.log(user.firstName); //way 1
@@ -184,17 +182,14 @@ console.log(user.loginCount);
 console.table(user);
 //better way to look an object
 
-
-
 // ['React','Js','Python'].every(user.buyCousrse);
-user.buyCousrse('React')
+user.buyCousrse("React");
 console.log(user.getCcount());
-console.table(user)
-
+console.table(user);
 
 //For loop basics
 
-const names2 = ['Dhruv','Jimit',"Jay","Raj","Ikjyot"];
+const names2 = ["Dhruv", "Jimit", "Jay", "Raj", "Ikjyot"];
 // for (let index = 0; index < names2.length; index++) {
 //     console.log(names2[index]);
 // }
@@ -213,27 +208,19 @@ const names2 = ['Dhruv','Jimit',"Jay","Raj","Ikjyot"];
 
 //for of and for in
 
-for(const n of names2){
-    console.log(n);
+for (const n of names2) {
+  console.log(n);
 }
 
 const symbol = {
-    in : "inr",
-    us : "usd",
-    au : "ausd",
+  in: "inr",
+  us: "usd",
+  au: "ausd",
 };
 
-for(const m in symbol){
-    console.log(symbol[m]);
+for (const m in symbol) {
+  console.log(symbol[m]);
 }
-
-
-
-
-
-
-
-
 
 /*
 OBJECT:
@@ -255,25 +242,22 @@ as well as all the objects that inherit from it,
 ought to have a few more properties
 */
 
-
-
-
 //code:
-var User = function(firstName, courseCount) {
-    this.firstName = firstName;
-    this.courseCount = courseCount;
-    this.getCourseCount = function() {
-        console.log(`Course count is: ${this.courseCount}`)
-    };
+var User = function (firstName, courseCount) {
+  this.firstName = firstName;
+  this.courseCount = courseCount;
+  this.getCourseCount = function () {
+    console.log(`Course count is: ${this.courseCount}`);
+  };
 };
 // above code is another way of defining object
 
-User.prototype.getFirstname = function() {
-    console.log(`Your firstname is : ${this.firstName}`);
+User.prototype.getFirstname = function () {
+  console.log(`Your firstname is : ${this.firstName}`);
 };
 // using prototype you can access or give them more properties or more functions,getters ,setters etc.
 
-var jay = new User("jay", 2); 
+var jay = new User("jay", 2);
 // new keyword create new Instances of User
 jay.getCourseCount();
 jay.getFirstname();
@@ -289,16 +273,16 @@ dhruv.getFirstname();
 
 // how to check is property exists or not?
 if (jay.hasOwnProperty("firstName")) {
-    jay.getFirstname();
-};
+  jay.getFirstname();
+}
 
 // above code check if property firstname is present or exists inside a object or not
 
-//Self executing finction 
+//Self executing finction
 //A JavaScript function that runs as soon as it is defined. Also known as an IIFE (Immediately Invoked Function Expression).
 
-(function sayHello(){
-console.log('Hello');
+(function sayHello() {
+  console.log("Hello");
 })();
 
 /*
@@ -315,32 +299,107 @@ Organize JavaScript code.
 
 //Clousure
 
-function outerFunction () {
-    const outer = `I see the outer variable!`
-    console.log("outer");
-    function innerFunction() {
-        console.log(outer);
-    }
-    return innerFunction
+function outerFunction() {
+  const outer = `I see the outer variable!`;
+  console.log("outer");
+  function innerFunction() {
+    console.log(outer);
+  }
+  return innerFunction;
 }
 
 //method 1
 var xc = outerFunction(); // xc is calling outerFunction so the function will be executed and outer will be printed and innerFunction will be returned
-xc();// now xc is innner function(so we treat it like a function) and it can have data from parent function
+xc(); // now xc is innner function(so we treat it like a function) and it can have data from parent function
 
 //OR we can do
 
-//method 2 
+//method 2
 
 outerFunction()(); //this is called as currying
 
+//ADVANCE JS
 
+// map
+/*
+1)map is not object they are completely differents
+2) map store value in key value pair
+3) we can have any value
+*/
 
+var myMap = new Map();
 
+myMap.set(1, "Uno");
+myMap.set(2, "dos");
+myMap.set(3, "Tres");
+myMap.set(4, "Cuatro"); // inserting value in map
 
+console.log(myMap);
 
+// for (let key of myMap.keys()) {
+//     console.log(`Key is ${key}`);
+// } // this will print all the keys from map
 
+// for (let key of myMap.values()) {
+//     console.log(`Value is ${key}`);
+// } // this will print all the values from maps
 
-//ADVANCE JS 
+// for (let [key, value] of myMap.entries()) {
+//     console.log(`Key is ${key} and Value is ${value}`);
+// } // in this case we are using map.entries() which gives you key,value
 
-//
+for (let [key, value] of myMap) {
+  console.log(`Key is ${key} and Value is ${value}`);
+} // in this case myMap give first key then value
+
+myMap.forEach((value) => console.log(`${value}`)); // In this when we have only one variable in arrow function myMaps give only value
+myMap.forEach((value, key) => console.log(`${value} and key is ${key}`)); //  in thi myMap give values first and then keys
+
+myMap.delete(2); // delete value where key is 2 ; syntax map.delete(key)
+console.log(myMap);
+
+console.log(myMap.get(1)); // this will print uno
+
+console.log(myMap.has(1)); // this will print true because 1 is inside map
+
+/*
+1)for of loop is always give you key first 
+2)for each loop is gonna always give you the value first
+*/
+
+//basis methods of map
+/* 
+1) set method syntax : map.set(key,value)
+Sets the value for the key in the Map object. Returns the Map object.
+example:
+myMap.set(1, "Uno");
+2) delete method syntax: map.delete(key)
+Returns true if an element in the Map object existed and has been removed, or false if the element does not exist. 
+example:
+myMap.delete(2) // delete value at key 2
+3) get method syntax : map.get(key)
+Returns the value associated to the key, or undefined if there is none.
+example:
+console.log(myMap.get(1)); // this will print uno
+4) has method syntax : map.has(key)
+Returns a boolean asserting whether a value has been associated to the key in the Map object or not.
+example:
+console.log(myMap.has(1));
+for more Information visit "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"
+*/
+
+const na = ["Dhruv", 3, "admin"];
+
+// var role = user[2];
+// var namesa = user[0];
+
+// var [namesa, n, role] = na;
+// console.log(namesa, n, role);
+
+const nsa = { nameas: "Dhruv", num: 3, role: "admin" };
+console.log(nsa.nameas);
+
+const { nameas, num, role } = nsa;
+console.log(nameas);
+
+// most important thing in destructuring is make sure the names are exactly same

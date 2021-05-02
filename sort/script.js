@@ -59,14 +59,14 @@ window.addEventListener("load", generateLIST);
 const button = document.querySelector(".sort-btn");
 
 button.addEventListener("click", () => {
-  courses.sort((a, b) =>  b.price - a.price );
+  courses.sort((a, b) => b.price - a.price);
   generateLIST();
 });
 
 const buttonS = document.querySelector(".sort-btun");
 
 buttonS.addEventListener("click", () => {
-  courses.sort(function(a, b) {
+  courses.sort(function (a, b) {
     var nameA = a.name.toUpperCase(); // ignore upper and lowercase
     var nameB = b.name.toUpperCase(); // ignore upper and lowercase
     if (nameA < nameB) {
