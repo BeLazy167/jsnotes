@@ -293,3 +293,43 @@ if (jay.hasOwnProperty("firstName")) {
 };
 
 // above code check if property firstname is present or exists inside a object or not
+
+//Self executing finction 
+//A JavaScript function that runs as soon as it is defined. Also known as an IIFE (Immediately Invoked Function Expression).
+
+(function sayHello(){
+console.log('Hello');
+})();
+
+/*
+(function name(){
+    statements
+})();
+
+Advantages of IIFE:
+
+Do not create unnecessary global variables and functions
+Functions and variables defined in IIFE do not conflict with other functions & variables even if they have same name.
+Organize JavaScript code.
+*/
+
+//Clousure
+
+function outerFunction () {
+    const outer = `I see the outer variable!`
+    console.log("outer");
+    function innerFunction() {
+        console.log(outer);
+    }
+    return innerFunction
+}
+
+//method 1
+var xc = outerFunction(); // xc is calling outerFunction so the function will be executed and outer will be printed and innerFunction will be returned
+xc();// now xc is innner function(so we treat it like a function) and it can have data from parent function
+
+//OR we can do
+
+//method 2 
+
+outerFunction()(); //this is called as currying
