@@ -333,3 +333,14 @@ xc();// now xc is innner function(so we treat it like a function) and it can hav
 //method 2 
 
 outerFunction()(); //this is called as currying
+
+
+
+
+
+
+
+
+//ADVANCE JS 
+
+//
