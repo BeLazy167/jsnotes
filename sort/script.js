@@ -66,11 +66,11 @@ button.addEventListener("click", () => {
 const buttonS = document.querySelector(".sort-btun");
 
 buttonS.addEventListener("click", () => {
-  courses.sort(function (a, b) {
+  courses.sort((a, b) => {
     var nameA = a.name.toUpperCase(); // ignore upper and lowercase
     var nameB = b.name.toUpperCase(); // ignore upper and lowercase
     if (nameA < nameB) {
-      return -1; //1 for decending
+      return -1; //1 for accending
     }
     if (nameA > nameB) {
       return 1; //-1 for accending
